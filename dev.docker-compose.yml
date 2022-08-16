@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  app:
+    image: udacity_image_filter
+    build:
+      context: .
+      dockerfile: ./dev.dockerfile
+    env_file:
+      - ./venv/dev.env
+    ports:
+      - 8010:8010
