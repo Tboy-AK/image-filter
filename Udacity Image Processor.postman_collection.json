@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "9846cb44-6609-4b75-a1ee-ae8636aecad4",
+		"name": "Udacity Image Processor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9339715"
+	},
+	"item": [
+		{
+			"name": "GET /",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8010/?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET /filteredimage?image_url={{image_url}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8010/filteredimage?image_url=https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.jpg",
+					"host": [
+						"localhost"
+					],
+					"port": "8010",
+					"path": [
+						"filteredimage"
+					],
+					"query": [
+						{
+							"key": "image_url",
+							"value": "https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.jpg"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Failed - Missing image URL query",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8010/filteredimage?image_url=.jpg",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"filteredimage"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": ".jpg"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-ZkAi6ZwTF5zsSYDD522WVIeEtx8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 20:05:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "try GET /filteredimage?image_url={{}}"
+				},
+				{
+					"name": "Failed - Image URL query too short",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8010/filteredimage?image_url=.jpg",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"filteredimage"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": ".jpg"
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "37"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"25-ZkAi6ZwTF5zsSYDD522WVIeEtx8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 20:08:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "try GET /filteredimage?image_url={{}}"
+				},
+				{
+					"name": "Failed - Missing MIME",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8010/filteredimage?image_url=https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.",
+							"host": [
+								"localhost"
+							],
+							"port": "8010",
+							"path": [
+								"filteredimage"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": "https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell."
+								}
+							]
+						}
+					},
+					"status": "Unprocessable Entity",
+					"code": 422,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2d-dZms3Qhh+tUAsXtScm8qQMGlhwA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 16 Aug 2022 20:10:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "ensure image_url is pointing to an image file"
+				}
+			]
+		}
+	]
+}

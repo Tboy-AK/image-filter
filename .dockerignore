@@ -39,7 +39,8 @@ venv/
 **/*docker*
 
 **/.git*
-
 **/README*
 
 **/package-lock.json
+
+**/*.postman_collection.json
