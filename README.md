@@ -52,4 +52,8 @@ Add your own domain name and have it point to the running services (try adding a
 
 ---
 
-_**NOTE: The helper functions provided for this project was updated to meet indutry standard coding styling.**_
+**To note:**
+
+1. The helper functions provided for this project were updated (refactored) to meet indutry standard coding styling. SonarLint code linter was used all through the development process to ensure quality and secure code.
+
+2. The helper function for image processing was updated to include an http library to retrieve images from the internet to succumb issue where `Jimp` cannot process certain images from the internet
