@@ -10,7 +10,6 @@ import express from 'express';
 
 export async function validateImageUrlQuery (req: express.Request, res: express.Response, next: express.NextFunction): Promise<express.Response> {
   const { image_url } = req.query;
-  console.log({name: image_url})
   if (
     !image_url ||
     typeof image_url !== 'string' ||

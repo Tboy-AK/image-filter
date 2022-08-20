@@ -46,9 +46,9 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
       return res
         .status(200)
         .sendFile(filteredImagePath, (err) => {
-        if (err) throw err;
-        deleteLocalFiles([filteredImagePath]);
-      });
+          if (err) throw err;
+          deleteLocalFiles([filteredImagePath]);
+        });
     } catch (error) {
       console.error(error);
 
