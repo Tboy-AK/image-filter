@@ -226,8 +226,109 @@
 					],
 					"cookie": [],
 					"body": "ensure image_url is pointing to an image file"
+				},
+				{
+					"name": "Failed - Unauthorised",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:{{PORT}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "{{PORT}}",
+							"path": [
+								"filteredimage"
+							],
+							"query": [
+								{
+									"key": "image_url",
+									"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
+								}
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-YG0FdPONmMB2I8FP93d54oC0Vvo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 21 Aug 2022 19:45:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "Unauthorised request"
 				}
 			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{GET_FILTERED_IMAGE_TOKEN}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "PORT",
+			"value": "8010",
+			"type": "string"
+		},
+		{
+			"key": "GET_FILTERED_IMAGE_TOKEN",
+			"value": "385ab4be3d519a9b076a047656321406b09692d704a280ae9169e5e686eecab737777b22810087dc6708bc71230b0ce567966c3c482f2cf10e0caeef1e59ad53",
+			"type": "string"
 		}
 	]
 }
