@@ -7,6 +7,17 @@
 // Check length (2-5)
 
 import express from 'express';
+import env from '../config/env';
+
+export const authenticateGetFilteredImageRequest = async (req: express.Request, res: express.Response, next: express.NextFunction): Promise<express.Response> => {
+  const { authorization } = req.headers;
+  const { getFilteredImageToken } = env;
+  const bearerToken = 'Bearer ' + getFilteredImageToken;
+
+  if (authorization !== bearerToken) return res.status(403).send("Unauthorised request");
+
+  next();
+}
 
 export async function validateImageUrlQuery (req: express.Request, res: express.Response, next: express.NextFunction): Promise<express.Response> {
   const { image_url } = req.query;

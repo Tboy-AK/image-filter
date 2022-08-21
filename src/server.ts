@@ -1,6 +1,9 @@
 import express from 'express';
 import env from './config/env';
-import { validateImageUrlQuery } from "./middleware/validate-filtered-images-request";
+import {
+  authenticateGetFilteredImageRequest,
+  validateImageUrlQuery,
+} from "./middleware/validate-filtered-images-request";
 import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
 (async () => {
@@ -37,7 +40,13 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
       .redirect("/filteredimage")
   });
 
-  app.get("/filteredimage", validateImageUrlQuery, async (req, res) => {
+  const middlewares = {
+    getFilteredimage: [
+      authenticateGetFilteredImageRequest, validateImageUrlQuery,
+    ]
+  };
+
+  app.get("/filteredimage", ...middlewares.getFilteredimage, async (req, res) => {
     try {
       const { image_url } = req.query;
       const validImageUrl: string = String(image_url);
