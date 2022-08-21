@@ -10,9 +10,16 @@ import fetch from "axios";
 export async function filterImageFromURL(inputURL: string): Promise<string> {
   return new Promise(async (resolve, reject) => {
     try {
-      const outpath =
-        "/tmp/filtered." + Math.floor(Math.random() * 2000) + ".jpg";
-      let photo;
+      const fileExtension: string = inputURL.
+        substring(inputURL.lastIndexOf('.')) ||
+        ".jpg"
+
+      const outpath: string =
+        "/tmp/filtered." +
+        Math.floor(Math.random() * 2000) +
+        fileExtension;
+
+      let photo: Jimp;
 
       if (inputURL.includes('http', 0)) {
         const { data } = await fetch(inputURL, {
