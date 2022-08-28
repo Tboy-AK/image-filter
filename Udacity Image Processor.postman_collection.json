@@ -12,23 +12,66 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8010/?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}",
+					"protocol": "{{PROTOCOL}}",
 					"host": [
-						"localhost"
+						"{{BASE_URL}}"
 					],
-					"port": "8010",
-					"path": [
-						""
-					],
-					"query": [
-						{
-							"key": "image_url",
-							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
-						}
-					]
+					"port": "{{PORT}}"
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}",
+							"protocol": "{{PROTOCOL}}",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"port": "{{PORT}}"
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 28 Aug 2022 04:23:41 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "20"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Server",
+							"value": "nginx/1.20.0"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"14-B8mMvnSf+VU2CaOQaMYczjB0mFY\""
+						}
+					],
+					"cookie": [],
+					"body": "Try '/filteredimage'"
+				}
+			]
 		},
 		{
 			"name": "GET /filteredimage?image_url={{image_url}}",
@@ -36,18 +79,19 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8010/filteredimage?image_url=https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.jpg",
+					"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+					"protocol": "{{PROTOCOL}}",
 					"host": [
-						"localhost"
+						"{{BASE_URL}}"
 					],
-					"port": "8010",
+					"port": "{{PORT}}",
 					"path": [
 						"filteredimage"
 					],
 					"query": [
 						{
 							"key": "image_url",
-							"value": "https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.jpg"
+							"value": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg"
 						}
 					]
 				}
@@ -59,11 +103,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8010/filteredimage?image_url=.jpg",
+							"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}/filteredimage?image_url=.jpg",
+							"protocol": "{{PROTOCOL}}",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "8010",
+							"port": "{{PORT}}",
 							"path": [
 								"filteredimage"
 							],
@@ -117,11 +162,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8010/filteredimage?image_url=.jpg",
+							"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}/filteredimage?image_url=.jpg",
+							"protocol": "{{PROTOCOL}}",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "8010",
+							"port": "{{PORT}}",
 							"path": [
 								"filteredimage"
 							],
@@ -175,11 +221,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8010/filteredimage?image_url=https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.",
+							"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}/filteredimage?image_url=https://i2-prod.mirror.co.uk/incoming/article6812352.ece/ALTERNATES/s615b/Elf-film-still-with-Will-Ferrell.",
+							"protocol": "{{PROTOCOL}}",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
-							"port": "8010",
+							"port": "{{PORT}}",
 							"path": [
 								"filteredimage"
 							],
@@ -233,10 +280,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:{{PORT}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
-							"protocol": "http",
+							"raw": "{{PROTOCOL}}://{{BASE_URL}}:{{PORT}}/filteredimage?image_url=https://upload.wikimedia.org/wikipedia/commons/b/bd/Golden_tabby_and_white_kitten_n01.jpg",
+							"protocol": "{{PROTOCOL}}",
 							"host": [
-								"localhost"
+								"{{BASE_URL}}"
 							],
 							"port": "{{PORT}}",
 							"path": [
@@ -328,6 +375,16 @@
 		{
 			"key": "GET_FILTERED_IMAGE_TOKEN",
 			"value": "385ab4be3d519a9b076a047656321406b09692d704a280ae9169e5e686eecab737777b22810087dc6708bc71230b0ce567966c3c482f2cf10e0caeef1e59ad53",
+			"type": "string"
+		},
+		{
+			"key": "PROTOCOL",
+			"value": "http",
+			"type": "string"
+		},
+		{
+			"key": "BASE_URL",
+			"value": "localhost",
 			"type": "string"
 		}
 	]
