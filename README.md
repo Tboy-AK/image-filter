@@ -2,14 +2,25 @@
 
 Udagram is a simple cloud application developed alongside the Udacity Cloud Engineering Nanodegree. It allows users to register and log into a web client, post photos to the feed, and process photos using an image filtering microservice.
 
+## Submission
+
+1. Endpoint URL: <http://udagram-image-filter-dev.us-east-2.elasticbeanstalk.com>
+2. A static `Bearer Token` is used to authenticate requests in the request `Authorization header`. The token is present in the [Postman collection](Udacity%20Image%20Processor.postman_collection.json)
+
+**To note:**
+
+1. The helper functions provided for this project were refactored to meet indutry standard coding styling. SonarLint code linter was used all through the development process to ensure quality and secure code.
+
+2. The helper function for image processing was updated to include an http library to retrieve images from the internet to succumb issue where `Jimp` cannot process certain images from the internet
+
+## Tasks
+
 The project is split into three parts:
 
 1. [The Simple Frontend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-frontend)
    A basic Ionic client web application which consumes the RestAPI Backend. [Covered in the course]
 2. [The RestAPI Backend](https://github.com/udacity/cloud-developer/tree/master/course-02/exercises/udacity-c2-restapi), a Node-Express server which can be deployed to a cloud service. [Covered in the course]
 3. [The Image Filtering Microservice](https://github.com/udacity/cloud-developer/tree/master/course-02/project/image-filter-starter-code), the final project for the course. It is a Node-Express application which runs a simple script to process images. [Your assignment]
-
-## Tasks
 
 ### Setup Node Environment
 
@@ -49,11 +60,3 @@ Prevent requests without valid authentication headers.
 Add your own domain name and have it point to the running services (try adding a subdomain name to point to the processing server)
 
 > !NOTE: Domain names are not included in AWS’ free tier and will incur a cost.
-
----
-
-**To note:**
-
-1. The helper functions provided for this project were updated (refactored) to meet indutry standard coding styling. SonarLint code linter was used all through the development process to ensure quality and secure code.
-
-2. The helper function for image processing was updated to include an http library to retrieve images from the internet to succumb issue where `Jimp` cannot process certain images from the internet
