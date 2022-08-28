@@ -36,8 +36,8 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   // after redirecting to the set endpoint
   app.get("/", async (_req, res) => {
     res
-      .status(301)
-      .redirect("/filteredimage")
+      .status(200)
+      .send("Try '/filteredimage'")
   });
 
   const middlewares = {
