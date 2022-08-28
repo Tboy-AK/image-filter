@@ -1,4 +1,4 @@
-FROM node:12-alpine3.15
+FROM node:16-alpine3.16
 
 ENV TZ=Africa/Lagos
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
